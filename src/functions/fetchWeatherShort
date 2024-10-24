@@ -1,17 +1,25 @@
 import key from "../variables/key";
 
 const fetchWeatherShort = async (city, unit = "us") => {
-  const weatherApi = await fetch(
-    "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
-      city +
-      "?unitGroup=" +
-      unit +
-      "&include=days,current" +
-      "&key=" +
-      key,
-  );
-  const weatherJson = weatherApi.json();
-  return weatherJson
+  try {
+    const weatherApi = await fetch(
+      "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
+        city +
+        "?unitGroup=" +
+        unit +
+        "&include=days,current" +
+        "&key=" +
+        key,
+    );
+    if (!weatherApi.ok) {
+      throw new Error(`Something went wrong. Code: ${weatherApi.status}`);
+    }
+    const weatherJson = weatherApi.json();
+    return weatherJson;
+  } catch (e) {
+    console.log(e);
+    return e;
+  }
 };
 
-export default fetchWeatherShort
+export default fetchWeatherShort;
