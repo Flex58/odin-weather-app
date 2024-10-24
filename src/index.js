@@ -1,6 +1,7 @@
 import "./styles.css";
-import fetchWeather from "./functions/fetchWeather";
+import fetchWeatherFull from "./functions/fetchWeather";
+import fetchWeatherShort from "./functions/fetchWeatherShort";
 
-fetchWeather("vienna").then(result => {
+Promise.all([fetchWeatherFull("vienna"), fetchWeatherShort("vienna")]).then(result => {
     console.log(result)
 })
