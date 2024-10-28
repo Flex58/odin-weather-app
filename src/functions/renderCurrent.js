@@ -1,6 +1,7 @@
 import getDayName from "./getDayName";
 import activeUnit from "../variables/activeUnit";
 import clearScreen from "./clearScreen";
+import renderDays from "./renderDays";
 
 const renderCurrent = (metricWeather, usWeather) => {
   let weather;
@@ -54,22 +55,26 @@ const renderCurrent = (metricWeather, usWeather) => {
   description.textContent = weather.currentConditions.conditions;
 
   celsius.addEventListener("click", () => {
-      if (weather == usWeather) {
-        activeUnit.switchActiveUnit()
-        weather = metricWeather
-        clearScreen("#selectedWeather")
-        renderCurrent(metricWeather, usWeather)
-      }
-  })
+    if (weather == usWeather) {
+      activeUnit.switchActiveUnit();
+      weather = metricWeather;
+      clearScreen("#selectedWeather");
+      clearScreen("#weatherForecast");
+      renderCurrent(metricWeather, usWeather);
+      renderDays(metricWeather, usWeather);
+    }
+  });
 
   fahrenheit.addEventListener("click", () => {
-      if (weather == metricWeather) {
-        activeUnit.switchActiveUnit()
-        weather = usWeather
-        clearScreen("#selectedWeather")
-        renderCurrent(metricWeather, usWeather)
-      }
-  })
+    if (weather == metricWeather) {
+      activeUnit.switchActiveUnit();
+      weather = usWeather;
+      clearScreen("#selectedWeather");
+      clearScreen("#weatherForecast");
+      renderCurrent(metricWeather, usWeather);
+      renderDays(metricWeather, usWeather);
+    }
+  });
 
   weatherLeft.appendChild(weatherIcon);
   weatherLeft.appendChild(tempDiv);
