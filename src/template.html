@@ -6,14 +6,16 @@
     <title>Document</title>
   </head>
   <body>
+    <form action="" id="get-weather">
+      <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" placeholder="...London" required />
+      </div>
+      <button type="submit" id="submit">Search</button>
+    </form>
     <div id="content">
-      <form action="" id="get-weather">
-        <div>
-          <label for="city">City:</label>
-          <input type="text" id="city" placeholder="...London" required />
-        </div>
-        <button type="submit" id="submit">Search</button>
-      </form>
+      <div id="selectedWeather"></div>
+      <div id="weatherForecast"></div>
     </div>
   </body>
 </html>
