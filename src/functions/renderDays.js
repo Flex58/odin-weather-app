@@ -1,5 +1,7 @@
 import getDayShort from "./getDayShort";
 import activeUnit from "../variables/activeUnit";
+import clearScreen from "./clearScreen";
+import renderSelected from "./renderSelected";
 
 const renderDays = (metricWeather, usWeather) => {
   const MAX_DAYS = 8;
@@ -27,6 +29,11 @@ const renderDays = (metricWeather, usWeather) => {
     icon.textContent = weather.days[i].icon;
     tempHigh.textContent = weather.days[i].tempmax + "°";
     tempLow.textContent = weather.days[i].tempmin + "°";
+
+    card.addEventListener("click", () => {
+        clearScreen("#selectedWeather")
+        renderSelected(metricWeather, usWeather, card.id)
+    })
 
     card.appendChild(dayName);
     card.appendChild(icon);
