@@ -1,8 +1,6 @@
 import "./styles.css";
-import fetchWeatherFull from "./functions/fetchWeather";
-import getDayName from "./functions/getDayName";
-import activeUnit from "./variables/activeUnit";
-
+import fetchWeatherFull from "./functions/fetchWeather"
+import renderCurrent from "./functions/renderCurrent";
 
 const cityInput = document.querySelector("#city");
 const form = document.querySelector("#get-weather");
@@ -14,6 +12,8 @@ form.addEventListener("submit", async (e) => {
     fetchWeatherFull(cityInput.value),
     fetchWeatherFull(cityInput.value, "us"),
   ]);
+
+  renderCurrent(weatherInfo[0], weatherInfo[1])
 
   await console.log(weatherInfo);
 });
