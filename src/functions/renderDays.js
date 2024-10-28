@@ -21,12 +21,13 @@ const renderDays = (metricWeather, usWeather) => {
     card.classList.add("card");
     card.id = i;
     const dayName = document.createElement("h3");
-    const icon = document.createElement("div");
+    const icon = document.createElement("img");
     const tempHigh = document.createElement("p");
     const tempLow = document.createElement("p");
 
     dayName.textContent = getDayShort(date.getDay());
-    icon.textContent = weather.days[i].icon;
+    icon.classList.add(weather.days[i].icon);
+    icon.classList.add("small")
     tempHigh.textContent = weather.days[i].tempmax + "°";
     tempLow.textContent = weather.days[i].tempmin + "°";
 

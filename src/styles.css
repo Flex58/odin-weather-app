@@ -1,0 +1,43 @@
+.partly-cloudy-day {
+    content: url(./assets/partly-cloudy-day.svg);  
+}
+
+.partly-cloudy-night {
+    content: url(./assets/partly-cloudy-night.svg);
+}
+
+.clear-day {
+    content: url(./assets/clear-day.svg);
+}
+
+.clear-night {
+    content: url(./assets/clear-night.svg);
+}
+
+.cloudy {
+    content: url(./assets/cloudy.svg);
+}
+
+.fog {
+    content: url(./assets/fog.svg);
+}
+
+.rain {
+    content: url(./assets/rain.svg);
+}
+
+.snow {
+    content: url(./assets/snow.svg);
+}
+
+.wind {
+    content: url(./assets/wind.svg);
+}
+
+img {
+    width: 50px;
+}
+
+.small {
+    width: 25px;
+}

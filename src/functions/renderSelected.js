@@ -19,7 +19,7 @@ const renderSelected = (metricWeather, usWeather, id) => {
   const container = document.querySelector("#selectedWeather");
 
   const weatherLeft = document.createElement("div");
-  const weatherIcon = document.createElement("div");
+  const weatherIcon = document.createElement("img");
   const tempDiv = document.createElement("h1");
 
   const unitContainer = document.createElement("div");
@@ -37,7 +37,7 @@ const renderSelected = (metricWeather, usWeather, id) => {
   const day = document.createElement("p");
   const description = document.createElement("p");
 
-  weatherIcon.textContent = weather.days[id].icon;
+  weatherIcon.classList.add(weather.days[id].icon);
   tempDiv.textContent = weather.days[id].temp;
 
   celsius.textContent = "°C";
