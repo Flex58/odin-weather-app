@@ -1,5 +1,6 @@
 import getDayName from "./getDayName";
 import activeUnit from "../variables/activeUnit";
+import clearScreen from "./clearScreen";
 
 const renderCurrent = (metricWeather, usWeather) => {
   let weather;
@@ -56,6 +57,8 @@ const renderCurrent = (metricWeather, usWeather) => {
       if (weather == usWeather) {
         activeUnit.switchActiveUnit()
         weather = metricWeather
+        clearScreen("#selectedWeather")
+        renderCurrent(metricWeather, usWeather)
       }
   })
 
@@ -63,7 +66,8 @@ const renderCurrent = (metricWeather, usWeather) => {
       if (weather == metricWeather) {
         activeUnit.switchActiveUnit()
         weather = usWeather
-        
+        clearScreen("#selectedWeather")
+        renderCurrent(metricWeather, usWeather)
       }
   })
 
