@@ -18,6 +18,9 @@ const renderSelected = (metricWeather, usWeather, id) => {
 
   const container = document.querySelector("#selectedWeather");
 
+  const cityName = document.querySelector("#cityName");
+  cityName.textContent = weather.resolvedAddress;
+
   const weatherLeft = document.createElement("div");
   const weatherIcon = document.createElement("img");
   const tempDiv = document.createElement("h1");
@@ -26,7 +29,7 @@ const renderSelected = (metricWeather, usWeather, id) => {
   const celsius = document.createElement("div");
   const divider = document.createElement("div");
   const fahrenheit = document.createElement("div");
-  unitContainer.id = "unitGroup"
+  unitContainer.id = "unitGroup";
 
   const extraInfoContainer = document.createElement("div");
   const precipitation = document.createElement("p");
@@ -44,15 +47,18 @@ const renderSelected = (metricWeather, usWeather, id) => {
   celsius.textContent = "°C";
   divider.textContent = "|";
   fahrenheit.textContent = "°F";
+  if (weather == metricWeather) {
+    celsius.classList.add("selected");
+  } else {
+    fahrenheit.classList.add("selected");
+  }
 
-  precipitation.textContent =
-    "Precipitation: " + weather.days[id].precip + "%";
+  precipitation.textContent = "Precipitation: " + weather.days[id].precip + "%";
   humid.textContent = "Humidity: " + weather.days[id].humidity + "%";
   wind.textContent = "Wind: " + weather.days[id].windspeed + unitIcon;
 
   currentConditions.textContent = "Weather";
-  day.textContent =
-    getDayName(date.getDay());
+  day.textContent = getDayName(date.getDay());
   description.textContent = weather.days[id].conditions;
 
   celsius.addEventListener("click", () => {

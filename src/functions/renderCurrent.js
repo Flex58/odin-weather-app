@@ -18,6 +18,9 @@ const renderCurrent = (metricWeather, usWeather) => {
 
   const container = document.querySelector("#selectedWeather");
 
+  const cityName = document.querySelector("#cityName");
+  cityName.textContent = weather.resolvedAddress;
+
   const weatherLeft = document.createElement("div");
   const weatherIcon = document.createElement("img");
   const tempDiv = document.createElement("h1");
@@ -26,7 +29,7 @@ const renderCurrent = (metricWeather, usWeather) => {
   const celsius = document.createElement("div");
   const divider = document.createElement("div");
   const fahrenheit = document.createElement("div");
-  unitContainer.id = "unitGroup"
+  unitContainer.id = "unitGroup";
 
   const extraInfoContainer = document.createElement("div");
   const precipitation = document.createElement("p");
@@ -44,6 +47,11 @@ const renderCurrent = (metricWeather, usWeather) => {
   celsius.textContent = "°C";
   divider.textContent = "|";
   fahrenheit.textContent = "°F";
+  if (weather == metricWeather) {
+    celsius.classList.add("selected");
+  } else {
+    fahrenheit.classList.add("selected");
+  }
 
   precipitation.textContent =
     "Precipitation: " + weather.currentConditions.precip + "%";
