@@ -136,3 +136,26 @@ h2 {
 .active {
     background-color: #866c15ab;
 }
+
+label {
+    font-weight: bold;
+}
+
+button {
+    background-color: #b1b1b1;
+    border-radius: 8px;
+    border: 1px solid #1f1f1f;
+    color: #1f1f1f;
+    font-weight: bold;
+    padding: 2px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input {
+    border-radius: 8px;
+    padding: 2px;
+    color: #1f1f1f;
+}
