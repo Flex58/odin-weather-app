@@ -17,6 +17,8 @@ const renderCurrent = (metricWeather, usWeather) => {
   let date = new Date(weather.days[0].datetime);
 
   const container = document.querySelector("#selectedWeather");
+  container.className = ""
+  container.classList.add("0")
 
   const cityName = document.querySelector("#cityName");
   cityName.textContent = weather.resolvedAddress;

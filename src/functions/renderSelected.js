@@ -17,6 +17,8 @@ const renderSelected = (metricWeather, usWeather, id) => {
   let date = new Date(weather.days[id].datetime);
 
   const container = document.querySelector("#selectedWeather");
+  container.className = ""
+  container.classList.add(id)
 
   const cityName = document.querySelector("#cityName");
   cityName.textContent = weather.resolvedAddress;

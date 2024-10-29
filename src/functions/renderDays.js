@@ -14,12 +14,20 @@ const renderDays = (metricWeather, usWeather) => {
   }
 
   const container = document.querySelector("#weatherForecast");
+  const selected = document.querySelector("#selectedWeather")
 
   for (let i = 0; i < MAX_DAYS; i++) {
     let date = new Date(weather.days[i].datetime);
     const card = document.createElement("div");
     card.classList.add("card");
     card.id = i;
+    if (card.id == selected.classList[0]) {
+      card.classList.add("active")
+    } else {
+      if (card.classList.contains("active")) {
+        card.classList.remove("active")
+      }
+    }
     const dayName = document.createElement("h3");
     const icon = document.createElement("img");
     const tempHigh = document.createElement("p");
@@ -33,7 +41,9 @@ const renderDays = (metricWeather, usWeather) => {
 
     card.addEventListener("click", () => {
         clearScreen("#selectedWeather")
+        clearScreen("#weatherForecast")
         renderSelected(metricWeather, usWeather, card.id)
+        renderDays(metricWeather, usWeather)
     })
 
     card.appendChild(dayName);

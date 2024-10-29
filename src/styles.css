@@ -1,133 +1,138 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1f1f1f;
-    color: #f0f0f0;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .partly-cloudy-day {
-    content: url(./assets/partly-cloudy-day.svg);  
+  content: url(./assets/partly-cloudy-day.svg);
 }
 
 .partly-cloudy-night {
-    content: url(./assets/partly-cloudy-night.svg);
+  content: url(./assets/partly-cloudy-night.svg);
 }
 
 .clear-day {
-    content: url(./assets/clear-day.svg);
+  content: url(./assets/clear-day.svg);
 }
 
 .clear-night {
-    content: url(./assets/clear-night.svg);
+  content: url(./assets/clear-night.svg);
 }
 
 .cloudy {
-    content: url(./assets/cloudy.svg);
+  content: url(./assets/cloudy.svg);
 }
 
 .fog {
-    content: url(./assets/fog.svg);
+  content: url(./assets/fog.svg);
 }
 
 .rain {
-    content: url(./assets/rain.svg);
+  content: url(./assets/rain.svg);
 }
 
 .snow {
-    content: url(./assets/snow.svg);
+  content: url(./assets/snow.svg);
 }
 
 .wind {
-    content: url(./assets/wind.svg);
+  content: url(./assets/wind.svg);
 }
 
 img {
-    width: 50px;
-    filter: invert(89%) sepia(14%) saturate(720%) hue-rotate(194deg) brightness(110%) contrast(86%);
+  width: 50px;
+  filter: invert(89%) sepia(14%) saturate(720%) hue-rotate(194deg)
+    brightness(110%) contrast(86%);
 }
 
 .small {
-    width: 25px;
+  width: 25px;
 }
 
 #selectedWeather {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding-bottom: 30px;
 }
 
-#selectedWeather div:first-child{
-    display: flex;
+#selectedWeather div:first-child {
+  display: flex;
 }
 
-#unitGroup{
-    display: flex;
-    padding-right: 10px;
-    color: #b1b1b1;
+#unitGroup {
+  display: flex;
+  padding-right: 10px;
+  color: #b1b1b1;
 }
 
 #unitGroup:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .card:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #weatherForecast {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
 h1 {
-    align-self: center;
+  align-self: center;
 }
 
 .card {
-    min-width: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
+  min-width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
-
 form {
-    display: flex;
-    padding-top: 25px;
+  display: flex;
+  padding-top: 25px;
 }
 
 p {
-    color: #b1b1b1;
+  color: #b1b1b1;
 }
 
 .card p:first-of-type {
-    color:#f0f0f0;
+  color: #f0f0f0;
 }
 
 h2 {
-    color: #fcd862;
-}
+  color: #fcd862;
+} 
 
 #load {
-    display: none;
+  display: none;
 }
 
 #cityName {
-    padding-top: 30px;
-    padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 .selected {
-    color: #f0f0f0;
+  color: #f0f0f0;
 }
 
+.active {
+    background-color: #866c15ab;
+}
