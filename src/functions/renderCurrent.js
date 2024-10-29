@@ -26,6 +26,7 @@ const renderCurrent = (metricWeather, usWeather) => {
   const celsius = document.createElement("div");
   const divider = document.createElement("div");
   const fahrenheit = document.createElement("div");
+  unitContainer.id = "unitGroup"
 
   const extraInfoContainer = document.createElement("div");
   const precipitation = document.createElement("p");
